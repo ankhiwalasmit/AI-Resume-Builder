@@ -6,7 +6,7 @@ import { BtnBold, BtnBulletList, BtnClearFormatting, BtnItalic, BtnLink, BtnNumb
 import { AIChatSession } from './../../../../service/AIModal';
 import { toast } from 'sonner';
 // const PROMPT='position titile: {positionTitle} , Depends on position title give me summary for my experience in resume (Please do not add experince level and No JSON array) , give me result in paragraph and remove position title text, curly braces and double quotes'
-const PROMPT='position title: {positionTitle} , Depends on position title give me list of  summery for my experiebce in summary for my resume in paragraph format, With summary in JSON Format'
+const PROMPT='Provide a concise summary of my experience in a specific role. Omit any mention of the role title or use of special characters. Ensure the output is in paragraph format and suitable for inclusion in a resume.'
 function RichTextEditor({onRichTextEditorChange,index,defaultValue}) {
     const [value,setValue]=useState(defaultValue);
     const {resumeInfo,setResumeInfo}=useContext(ResumeInfoContext)
