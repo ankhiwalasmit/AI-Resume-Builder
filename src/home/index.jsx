@@ -72,10 +72,10 @@ function Home() {
       >
        <AtomIcon className='h-8 w-8'/>
 
-        <h2 className="mt-4 text-xl font-bold text-black">Write promot for your form</h2>
+        <h2 className="mt-4 text-xl font-bold text-black">Write prompt for your form</h2>
 
         <p className="mt-1 text-sm text-gray-600">
-        Start by selecting the type of interview or questions you'd like to practice with. Our system will craft questions based on your profile and preferences.
+        Start by choosing the type of job or role you're targeting. Our AI will then generate customized content and structure suggestions based on your profile, skills, and experience. It's quick and tailored to your needs.
         </p>
       </a>
 
@@ -88,7 +88,7 @@ function Home() {
         <h2 className="mt-4 text-xl font-bold text-black">Edit Your form </h2>
 
         <p className="mt-1 text-sm text-gray-600">
-        Respond to AI-generated questions using video or audio. Record your answers in a realistic interview environment to practice your skills.
+        Personalize your AI-generated resume by updating job title, skills, and experiences. You can also add or remove information to ensure the resume perfectly reflects your background.
         </p>
       </a>
 
@@ -101,7 +101,7 @@ function Home() {
         <h2 className="mt-4 text-xl font-bold text-black">Share & Start Accepting Responses</h2>
 
         <p className="mt-1 text-sm text-gray-600">
-        After completing your interview, get immediate AI-driven feedback on your performance, including tips on how to improve.
+        Once your resume is complete, you can download it or share it. 
         </p>
       </a>
 
