@@ -14,7 +14,7 @@ function ViewResume() {
 
     useEffect(()=>{
         GetResumeInfo();
-    },[])
+    },[resumeInfo])
     const GetResumeInfo=()=>{
         console.log(resumeId);
         GlobalApi.GetResumeById(resumeId).then(resp=>{
