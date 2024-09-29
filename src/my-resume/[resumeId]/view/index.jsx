@@ -10,13 +10,13 @@ import { RWebShare } from 'react-web-share'
 function ViewResume() {
 
     const [resumeInfo,setResumeInfo]=useState();
-    const params=useParams();
+    const {resumeId}=useParams();
 
     useEffect(()=>{
         GetResumeInfo();
     },[])
     const GetResumeInfo=()=>{
-        GlobalApi.GetResumeById(params?.resumeId).then(resp=>{
+        GlobalApi.GetResumeById(resumeId).then(resp=>{
             console.log(resp.data.data);
             setResumeInfo(resp.data.data);
         })
