@@ -10,18 +10,12 @@ import { RWebShare } from 'react-web-share'
 function ViewResume() {
 
     const [resumeInfo,setResumeInfo]=useState();
-    // const {resumeId}=useParams();
-    var resumeId;
-    const [resumeList,setResumeList]=useState([]);
+    const {resumeId}=useParams();
 
     useEffect(()=>{
         GetResumeInfo();
     },[])
     const GetResumeInfo=()=>{
-        {resumeList.map((resume,index)=>(
-            resumeId={resume}
-          )) 
-        }
         GlobalApi.GetResumeById(resumeId).then(resp=>{
             console.log(resp.data.data);
             setResumeInfo(resp.data.data);
@@ -66,6 +60,5 @@ function ViewResume() {
     </ResumeInfoContext.Provider>
   )
 }
-
 
 export default ViewResume
