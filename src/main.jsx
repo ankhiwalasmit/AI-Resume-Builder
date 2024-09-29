@@ -27,16 +27,16 @@ const router=createBrowserRouter([
         path:'/dashboard/resume/:resumeId/edit',
         element:<EditResume/>
       },
+      {
+        path:'/my-resume/:resumeId/view',
+        element:<ViewResume/>
+      }
     ]
   },
   {
     path:'/auth/sign-in',
     element:<SignInPage/>
   },
-  {
-    path:'/my-resume/:resumeId/view',
-    element:<ViewResume/>
-  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
