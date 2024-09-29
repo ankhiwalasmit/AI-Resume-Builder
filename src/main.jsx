@@ -29,6 +29,7 @@ const router=createBrowserRouter([
       },
     ]
   },
+ ,
   {
     path:'/auth/sign-in',
     element:<SignInPage/>
