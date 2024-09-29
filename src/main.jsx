@@ -29,7 +29,6 @@ const router=createBrowserRouter([
       },
     ]
   },
- ,
   {
     path:'/auth/sign-in',
     element:<SignInPage/>
@@ -45,5 +44,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <RouterProvider router={router} />
     </ClerkProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
