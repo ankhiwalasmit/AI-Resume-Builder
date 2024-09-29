@@ -13,6 +13,7 @@ function ViewResume() {
     const {resumeId}=useParams();
 
     useEffect(()=>{
+        console.log(resumeId);
         GetResumeInfo();
     },[resumeInfo])
     const GetResumeInfo=()=>{
