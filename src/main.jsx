@@ -14,13 +14,7 @@ const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 const router=createBrowserRouter([
   {
     path:'/',
-    element:<Home/>,
-    children:[
-      {
-        path:'/my-resume/:resumeId/view',
-        element:<ViewResume/>
-      },
-    ]
+    element:<Home/>
   },
   {
     element:<App/>,
@@ -39,6 +33,10 @@ const router=createBrowserRouter([
     path:'/auth/sign-in',
     element:<SignInPage/>
   },
+  {
+    path:'/my-resume/:resumeId/view',
+    element:<ViewResume/>
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
