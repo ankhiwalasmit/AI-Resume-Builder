@@ -51,8 +51,8 @@ function RichTextEditor({onRichTextEditorChange,index,defaultValue}) {
          <Toolbar>
           <BtnBold />
           <BtnItalic />
-          <BtnStrikeThrough />
-          <BtnBulletList />
+          <BtnUnderline />
+          <BtnNumberedList />
         </Toolbar>
       </Editor>
       </EditorProvider>
