@@ -16,13 +16,18 @@ function ViewResume() {
 
     useEffect(()=>{
         GetResumeInfo();
-    },[])
-    const GetResumeInfo=()=>{
-        GlobalApi.GetResumeById(resumeId).then(resp=>{
-            console.log(resp.data.data);
+    },[resumeId])
+    
+    const GetResumeInfo = async () => {
+        try {
+            const resp = await GlobalApi.GetResumeById(resumeId);
+            console.log(resp.data); // Log to see the structure
             setResumeInfo(resp.data.data);
-        })
-    }
+        } catch (error) {
+            console.error("Failed to fetch resume info:", error);
+            setResumeInfo(null); // Set to null to indicate an error
+        }
+    };    
 
     const HandleDownload=()=>{
         window.print();
