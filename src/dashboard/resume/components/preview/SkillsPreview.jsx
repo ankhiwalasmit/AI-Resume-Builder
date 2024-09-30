@@ -7,7 +7,7 @@ function SkillsPreview({resumeInfo}) {
     style={{
         color:resumeInfo?.themeColor
     }}
-    >Skills</h2>
+    >Summary</h2>
     <hr style={{
         borderColor:resumeInfo?.themeColor
     }} />

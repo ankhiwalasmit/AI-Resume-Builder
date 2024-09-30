@@ -6,28 +6,21 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import GlobalApi from './../../../../service/GlobalApi'
 import { RWebShare } from 'react-web-share'
-import { useUser } from '@clerk/clerk-react'
 
 function ViewResume() {
 
     const [resumeInfo,setResumeInfo]=useState();
     const {resumeId}=useParams();
-    const {user}=useUser;
 
     useEffect(()=>{
         GetResumeInfo();
-    },[resumeId])
-    
-    const GetResumeInfo = async () => {
-        try {
-            const resp = await GlobalApi.GetResumeById(resumeId);
-            console.log(resp.data); // Log to see the structure
+    },[])
+    const GetResumeInfo=()=>{
+        GlobalApi.GetResumeById(resumeId).then(resp=>{
+            console.log(resp.data.data);
             setResumeInfo(resp.data.data);
-        } catch (error) {
-            console.error("Failed to fetch resume info:", error);
-            setResumeInfo(null); // Set to null to indicate an error
-        }
-    };    
+        })
+    }
 
     const HandleDownload=()=>{
         window.print();
