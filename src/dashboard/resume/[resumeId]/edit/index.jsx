@@ -4,12 +4,13 @@ import { ResumeInfoContext } from '@/context/ResumeInfoContext'
 import ResumePreview from '@/dashboard/resume/components/ResumePreview'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import GlobalApi from './../../../../../service/GlobalApi'
+import GlobalApi from './../../../../service/GlobalApi'
 
 function ViewResume() {
 
     const [resumeInfo, setResumeInfo] = useState();
-    const { resumeId } = useParams();
+    const [documentId, setDocumentId] = useState(null);
+    const { resumeId } = useParams(); // Assuming resumeId is passed in the URL
 
     useEffect(() => {
         GetResumeInfo();
@@ -17,8 +18,10 @@ function ViewResume() {
 
     const GetResumeInfo = () => {
         GlobalApi.GetResumeById(resumeId).then(resp => {
-            console.log(resp.data.data);
-            setResumeInfo(resp.data.data);
+            const data = resp.data.data;
+            console.log(data);
+            setResumeInfo(data);
+            setDocumentId(data.documentId); // Assuming documentId is part of the resume data from Strapi
         })
     }
 
@@ -31,7 +34,7 @@ function ViewResume() {
             navigator.share({
                 title: resumeInfo?.firstName + " " + resumeInfo?.lastName + " resume",
                 text: "Hello Everyone, This is my resume. Please open the URL to see it.",
-                url: `/my-resume/${resumeId}/view`,
+                url: `${import.meta.env.VITE_BASE_URL}/my-resume/${documentId}/view`, // Using documentId here
             })
             .then(() => console.log('Shared successfully!'))
             .catch(error => console.log('Error sharing:', error));
@@ -54,7 +57,7 @@ function ViewResume() {
                     </p>
                     <div className='flex justify-between px-44 my-10'>
                         <Button onClick={HandleDownload}>Download</Button>
-                        <Button onClick={HandleShare}>Share</Button>
+                        <Button onClick={HandleShare} disabled={!documentId}>Share</Button>
                     </div>
                 </div>
             </div>
