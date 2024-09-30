@@ -17,7 +17,7 @@ const GetUserResumes=(userEmail)=>axiosClient.get('/user-resumes?filters[userEma
 
 const UpdateResumeDetail=(id,data)=>axiosClient.put('/user-resumes/'+id,data)
 
-const GetResumeById=(id)=>axiosClient.get('/user-resumes/'+id+"?populate=*")
+const GetResumeById=(id)=>axiosClient.get('/user-resumes/'+id+"/?populate=*")
 
 const DeleteResumeById=(id)=>axiosClient.delete('/user-resumes/'+id)
 
