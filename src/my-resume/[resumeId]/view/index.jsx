@@ -10,13 +10,13 @@ import { RWebShare } from 'react-web-share'
 function ViewResume() {
 
     const [resumeInfo,setResumeInfo]=useState();
-    const {resumeId, documentId}=useParams();
+    const {resumeId}=useParams();
 
     useEffect(()=>{
         GetResumeInfo();
     },[])
     const GetResumeInfo=()=>{
-        GlobalApi.GetResumeById(documentId).then(resp=>{
+        GlobalApi.GetResumeById(resumeId).then(resp=>{
             console.log(resp.data.data);
             setResumeInfo(resp.data.data);
         })
@@ -42,7 +42,7 @@ function ViewResume() {
                 <RWebShare
         data={{
           text: "Hello Everyone, This is my resume please open url to see it",
-          url: import.meta.env.VITE_VERCEL_URL+"/my-resume/"+documentId+"/view",
+          url: import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view",
           title: resumeInfo?.firstName+" "+resumeInfo?.lastName+" resume",
         }}
         onClick={() => console.log("shared successfully!")}
