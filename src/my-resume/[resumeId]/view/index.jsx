@@ -6,15 +6,17 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import GlobalApi from './../../../../service/GlobalApi'
 import { RWebShare } from 'react-web-share'
+import { useUser } from '@clerk/clerk-react'
 
 function ViewResume() {
 
     const [resumeInfo,setResumeInfo]=useState();
     const {resumeId}=useParams();
+    const {user}=useUser;
 
     useEffect(()=>{
         GetResumeInfo();
-    },[])
+    },[user])
     const GetResumeInfo=()=>{
         GlobalApi.GetResumeById(resumeId).then(resp=>{
             console.log(resp.data.data);
