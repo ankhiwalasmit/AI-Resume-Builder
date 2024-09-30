@@ -31,7 +31,7 @@ function ViewResume() {
             navigator.share({
                 title: resumeInfo?.firstName + " " + resumeInfo?.lastName + " resume",
                 text: "Hello Everyone, This is my resume. Please open the URL to see it.",
-                url: `${import.meta.env.VITE_BASE_URL}/my-resume/${resumeId}/view`,
+                url: `/my-resume/${resumeId}/view`,
             })
             .then(() => console.log('Shared successfully!'))
             .catch(error => console.log('Error sharing:', error));
