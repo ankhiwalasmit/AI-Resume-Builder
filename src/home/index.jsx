@@ -1,23 +1,33 @@
 import Header from '@/components/custom/Header'
-import { UserButton } from '@clerk/clerk-react'
+import { UserButton, useUser } from '@clerk/clerk-react'
 import { AtomIcon, Edit, Share2 } from 'lucide-react'
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Home() {
 
+  const {user,isLoaded,isSignedIn} = useUser();
   const navigate = useNavigate()
 
   const handleGetStarted = () => {
     navigate('/dashboard'); 
   };
 
+  const handleLogin = () => {
+    if(!isSignedIn&&isLoaded)
+      {
+        navigate('/auth/sign-in'); 
+      } else {
+        navigate('/dashboard'); 
+      }
+  };
+
   return (
     <div>
       <Header/>
       <div>
-      {/* <img src={'/grid.svg'} className="absolute z-[-10] w-full" 
-      width={1200} height={300} /> */}
+      <img src={'/grid.svg'} className="absolute z-[-10] w-full" 
+      width={1200} height={300} />
       {/* <Header/> */}
      <section className=" z-50">
     <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
@@ -125,12 +135,12 @@ function Home() {
     </div>
 
     <div className="mt-12 text-center">
-      <a
-        href="/sign-in"
-        className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
-      >
-        Get Started Today
-      </a>
+      <button
+                onClick={handleLogin}
+                className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
+              >
+                Get Started Today
+            </button>
     </div>
     </section>
   </div>
