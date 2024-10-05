@@ -84,7 +84,7 @@ function Home() {
 </section>
 <section className="py-8 bg-white z-50 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
 <h2 className="font-bold text-3xl">How it Works?</h2>
-<h2 className="text-md text-gray-500">Give mock interview in just 3 simplar easy step</h2>
+<h2 className="text-md text-gray-500">Create Resume in just 3 simplar easy step</h2>
 
 <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       <a
@@ -95,11 +95,10 @@ function Home() {
       >
        <AtomIcon className='h-8 w-8'/>
 
-        <h2 className="mt-4 text-xl font-bold text-black">Write promot for your form</h2>
+        <h2 className="mt-4 text-xl font-bold text-black">Enter Your Resume Information</h2>
 
         <p className="mt-1 text-sm text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci
-          distinctio alias voluptatum blanditiis laudantium.
+        Provide essential details such as your personal information, work experience, education, and skills to get started with your resume creation.
         </p>
       </a>
 
@@ -109,11 +108,10 @@ function Home() {
       >
       <Edit className='h-8 w-8'/>
 
-        <h2 className="mt-4 text-xl font-bold text-black">Edit Your form </h2>
+        <h2 className="mt-4 text-xl font-bold text-black">Generate AI-Powered Summary</h2>
 
         <p className="mt-1 text-sm text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci
-          distinctio alias voluptatum blanditiis laudantium.
+        Let AI create a personalized professional summary for you, based on the details you have provided.
         </p>
       </a>
 
@@ -123,11 +121,10 @@ function Home() {
       >
       <Share2 className='h-8 w-8' />
 
-        <h2 className="mt-4 text-xl font-bold text-black">Share & Start Accepting Responses</h2>
+        <h2 className="mt-4 text-xl font-bold text-black">Download Your Resume</h2>
 
         <p className="mt-1 text-sm text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci
-          distinctio alias voluptatum blanditiis laudantium.
+        Once you're satisfied, you can download your resume . You can also edit or delete resumes anytime to keep them updated.
         </p>
       </a>
 
